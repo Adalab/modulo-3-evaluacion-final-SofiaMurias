@@ -1,4 +1,46 @@
-.App {
-  width: 100px;
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 400px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.input {
+  width: 300px;
+  height: 25px;
+  margin-bottom: 20px;
+  background-color: black;
+  border: 2px solid rgb(88, 207, 228);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  margin-bottom: 20px;
+  width: 200px;
+
+  background-color: rgb(88, 207, 228);
+  &-title {
+    color: white;
+  }
+  &-text {
+    color: white;
+  }
+  &-image {
+    width: 100%;
+  }
 }
