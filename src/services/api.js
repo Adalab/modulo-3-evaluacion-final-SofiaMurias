@@ -7,6 +7,9 @@ const getApiData = () => {
           image: character.image,
           name: character.name,
           species: character.species,
+          origin: character.origin.name,
+          episode: character.espisode,
+          status: character.status,
         };
       });
 
