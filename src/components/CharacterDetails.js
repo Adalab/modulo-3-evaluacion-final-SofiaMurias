@@ -2,6 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CharacterDetails = (props) => {
+  const getStatus = () => {
+    if (props.character.status === "unknown") {
+      return <li>Status: {props.character.status}❔ </li>;
+    } else if (props.character.status === "Dead") {
+      return <li>Status: {props.character.status} 💀</li>;
+    } else if (props.character.status === "Alive") {
+      return <li>Status: {props.character.status} 👌🏼 </li>;
+    }
+  };
   return (
     <>
       <div className="details">
@@ -26,7 +35,8 @@ const CharacterDetails = (props) => {
               <li>Status:{props.character.status}</li>
               <li>Species: {props.character.species}</li>
               <li>Origin: {props.character.origin}</li>
-              <li>Episodes:{props.character.episode /*.length*/}</li>
+              <li>Episodes: {props.character.episode}</li>
+              <li>{getStatus()}</li>
             </ul>
           </section>
         </div>

@@ -38,7 +38,11 @@ const App = () => {
     const id = props.match.params.id;
     const foundCharacter = character.find((item) => item.id === parseInt(id));
 
-    return <CharacterDetails character={foundCharacter} />;
+    if (foundCharacter === undefined) {
+      return <PageNotFound></PageNotFound>;
+    } else {
+      return <CharacterDetails character={foundCharacter} />;
+    }
   };
 
   /* Seccion de filtrado */

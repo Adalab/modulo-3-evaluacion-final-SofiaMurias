@@ -7,10 +7,6 @@ const CharacterNotFound = (props) => {
     <div className="characterNot">
       <h2 className="characterNot-title">Personaje no encontrado </h2>
 
-      <Link className="characterNot-link" to="/">
-        Prueba otra vez
-      </Link>
-
       <img className="characterNot-gif" src={gif} alt="Gif RickandMorty"></img>
     </div>
   );
