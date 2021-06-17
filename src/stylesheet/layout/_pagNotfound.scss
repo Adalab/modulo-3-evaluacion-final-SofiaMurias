@@ -1,0 +1,29 @@
+.pagNot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &-title {
+    color: $colorText;
+    text-transform: uppercase;
+    font-family: $fontText;
+    margin-bottom: 10px;
+  }
+  &-text {
+    color: $colortextgreen;
+    margin-bottom: 15px;
+  }
+
+  &-link {
+    color: rgb(12, 204, 218);
+    font-family: $fontText;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  &-gif {
+    width: 300px;
+    border-radius: 20px;
+  }
+}

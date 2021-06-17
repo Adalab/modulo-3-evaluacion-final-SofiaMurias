@@ -1,0 +1,20 @@
+.characterNot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &-title {
+    color: $colorText;
+    text-transform: uppercase;
+    font-family: $fontText;
+    margin-bottom: 10px;
+  }
+  &-link {
+    color: rgb(12, 204, 218);
+    font-family: $fontText;
+    font-size: 20px;
+  }
+  &-gif {
+    width: 200px;
+    border-radius: 20px;
+  }
+}

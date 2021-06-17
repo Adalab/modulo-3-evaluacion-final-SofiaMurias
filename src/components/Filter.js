@@ -1,5 +1,4 @@
 import React from "react";
-import "../stylesheet/App.scss";
 import FilterName from "./FilterName";
 
 const Filter = (props) => {

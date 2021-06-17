@@ -4,6 +4,9 @@ import logo from "../images/logo.png";
 import CharacterList from "./CharacterList";
 import ls from "../services/local-storage";
 import Filter from "./Filter";
+import CharacterDetails from "./CharacterDetails";
+import PageNotFound from "./PageNotFound";
+import { Route, Switch } from "react-router-dom";
 import "../stylesheet/App.scss";
 
 const App = () => {
@@ -29,10 +32,10 @@ const App = () => {
     }
   };
 
-  /* Seccin de filtrado */
+  /* Seccion de filtrado */
 
   const filteredCharacters = character.filter((eachCharacter) =>
-    eachCharacter.name.includes(filterName)
+    eachCharacter.name.toLowerCase().includes(filterName)
   );
 
   return (
@@ -41,9 +44,16 @@ const App = () => {
         <h1>
           <img className="title" src={logo} alt="Ricky and Morty" />
         </h1>
-        <Filter handleFilter={handleFilter} name={filterName} />
+        <Switch>
+          <Route exact path="/">
+            <Filter handleFilter={handleFilter} name={filterName} />
 
-        <CharacterList character={filteredCharacters} />
+            <CharacterList character={filteredCharacters} />
+          </Route>
+          <Route exact path="/character/" component={CharacterDetails}></Route>
+
+          <Route component={PageNotFound} />
+        </Switch>
       </div>
     </>
   );

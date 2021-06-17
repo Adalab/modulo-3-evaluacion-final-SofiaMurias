@@ -1,51 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  width: 400px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-.form {
-  width: 300px;
-  height: 25px;
-  margin-bottom: 20px;
-  background-color: black;
-  border: 2px solid rgb(88, 207, 228);
-  color: white;
-}
-
-.cards {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  margin: 10px 10px;
-  width: 200px;
-
-  background-color: rgb(88, 207, 228);
-  &-title {
-    color: white;
-  }
-  &-text {
-    color: white;
-  }
-  &-image {
-    width: 100%;
-  }
-}
+@import "core/variables";
+@import "core/reset";
+@import "layout/landing";
+@import "layout/character-details";
+@import "layout/pagNotfound";
+@import "layout/characterNotfound";
