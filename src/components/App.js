@@ -6,6 +6,7 @@ import ls from "../services/local-storage";
 import Filter from "./Filter";
 import CharacterDetails from "./CharacterDetails";
 import PageNotFound from "./PageNotFound";
+import CharacterNotFound from "./CharacterNotFound";
 import { Route, Switch } from "react-router-dom";
 import "../stylesheet/App.scss";
 
@@ -32,6 +33,14 @@ const App = () => {
     }
   };
 
+  const renderCharacterDetails = (props) => {
+    //buscar el personaje
+    const id = props.match.params.id;
+    const foundCharacter = character.find((item) => item.id === parseInt(id));
+
+    return <CharacterDetails character={foundCharacter} />;
+  };
+
   /* Seccion de filtrado */
 
   const filteredCharacters = character.filter((eachCharacter) =>
@@ -47,13 +56,22 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Filter handleFilter={handleFilter} name={filterName} />
-
-            <CharacterList character={filteredCharacters} />
+            {filteredCharacters.length > 0 ? (
+              <CharacterList character={filteredCharacters} />
+            ) : (
+              <CharacterNotFound />
+            )}
           </Route>
-          <Route exact path="/character/" component={CharacterDetails}></Route>
+
+          <Route
+            exact
+            path="/character/:id"
+            component={renderCharacterDetails}
+          ></Route>
 
           <Route component={PageNotFound} />
         </Switch>
+        {/* <CharacterDetails /> */}
       </div>
     </>
   );

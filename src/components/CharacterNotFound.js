@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CharacterNotFound = (props) => {
   return (
     <div className="characterNot">
-      <h3 className="characterNot-title">Personaje no encontrado </h3>
+      <h2 className="characterNot-title">Personaje no encontrado </h2>
 
       <Link className="characterNot-link" to="/">
         Prueba otra vez
