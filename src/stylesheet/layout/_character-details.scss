@@ -13,6 +13,17 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    margin-right: 20px;
     color: $colorText;
   }
+  &-link {
+    margin-bottom: 5px;
+    color: $colorText;
+  }
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
 }
